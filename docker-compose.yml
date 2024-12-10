@@ -1,0 +1,30 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    container_name: moodmate_api
+    ports:
+      - "8080:8080"
+    networks:
+      - moodmate_network
+    env_file:
+      - .env
+
+  app:
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    container_name: moodmate_app
+    ports:
+      - "8501:8501"
+    networks:
+      - moodmate_network
+    environment:
+      - API_URL=http://moodmate_api:8080
+    depends_on:
+      - api
+
+networks:
+  moodmate_network:
+    driver: bridge
