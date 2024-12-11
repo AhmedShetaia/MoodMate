@@ -38,7 +38,7 @@ To run MoodMate locally, follow these steps:
 
 ### Clone the repository:
 ```bash
-git clone https://github.com/your-username/moodmate.git
+git clone https://github.com/AhmedShetaia/moodmate.git
 cd moodmate
 ```
 
@@ -125,12 +125,6 @@ Example:
 docker login -u oauth2accesstoken https://us-docker.pkg.dev
 ```
 
-For Container Registry:
-```bash
-docker login -u oauth2accesstoken https://gcr.io
-```
-Replace `gcr.io` with your specific registry domain if necessary (e.g., us.gcr.io, eu.gcr.io).
-
 ##### Step 3: Paste the Token
 When prompted for a password after running the docker login command, paste the token you copied in Step 1.
 
@@ -141,9 +135,6 @@ Password:
 Login Succeeded
 ```
 Now, you are authenticated with Docker using the manually copied token.
-```bash
-gcloud auth configure-docker
-```
 
 #### Step 2: Build and Push Docker Images
 
@@ -209,6 +200,7 @@ moodmate/
 ├── images/                   # Project assets like screenshots
 │   └── moodmate.png          # Screenshot of the MoodMate interface
 │
+├── .env                      # Include your GOOGLE_API_KEY
 ├── .dockerignore             # Specifies files to exclude from Docker builds
 ├── .gitignore                # Specifies files to exclude from Git commits
 ├── docker-compose.yml        # Configuration for Docker Compose to run the project
@@ -216,7 +208,7 @@ moodmate/
 ```
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/AhmedShetaia/MoodMate/blob/main/LICENSE) file for details.
 
 ## Contact
 Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/ahmed-shetaia/). I’d love to hear your feedback, discuss the project, or collaborate on future ideas!
