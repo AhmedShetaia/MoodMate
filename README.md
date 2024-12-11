@@ -23,15 +23,14 @@ MoodMate demonstrates the integration of modern tools and frameworks to create a
 
 ### Google Cloud Run Deployment:
 - Deployed the application online, making it accessible from anywhere.
-
+---
 ## Table of Contents
 1. [Installation](#installation)
 2. [Usage](#usage)
-3. [Environment Variables](#environment-variables)
-4. [Deployment](#deployment)
-5. [Project Structure](#project-structure)
-6. [License](#license)
-7. [Contact](#contact)
+3. [Deployment](#deployment)
+4. [Project Structure](#project-structure)
+5. [License](#license)
+6. [Contact](#contact)
 
 ## Installation
 To run MoodMate locally, follow these steps:
@@ -41,33 +40,29 @@ To run MoodMate locally, follow these steps:
 git clone https://github.com/AhmedShetaia/moodmate.git
 cd moodmate
 ```
-
-### Install Docker:
-Ensure Docker is installed and running on your system. [Download Docker](https://www.docker.com/products/docker-desktop/)
-
-### Build and run the Docker container:
+### Create a new Python environment
 ```bash
-docker-compose up --build
+python -m venv myenv
 ```
-
-### Access the application:
-Open the Streamlit server using the link provided in the terminal output.
-
-## Environment Variables
+make sure to activate it 
+```bash
+myenv\Scripts\activate
+```
+### Environment Variables
 MoodMate requires a Google API Key to access Google’s LLM for powering chatbot interactions. Follow these steps to set it up:
 
-### Obtain a Google API Key:
+#### Obtain a Google API Key:
 1. Visit the [Google Cloud Console](https://console.cloud.google.com/).
 2. Create a new project or select an existing one.
 3. Enable the Generative AI API or the relevant service.
 4. Generate an API key from the **APIs & Services** section.
 
-### Create a `.env` file inside the `api/` directory:
+#### Create a `.env` file inside the `api/` directory:
 ```bash
 touch api/.env
 ```
 
-### Add the API key to the `.env` file:
+#### Add the API key to the `.env` file:
 ```env
 GOOGLE_API_KEY=your-google-api-key
 ```
@@ -76,6 +71,19 @@ Replace `your-google-api-key` with the actual API key obtained from Google Cloud
 ### Other environment variables:
 Additional environment variables required for the system are specified in the Dockerfile and managed during containerization.
 
+### Install Docker:
+```bash
+pip install docker
+```
+
+### Build and run the Docker container:
+```bash
+docker-compose up --build
+```
+
+### Access the application:
+Open the Streamlit server using the link provided in the terminal output.
+---
 ## Deployment
 MoodMate is deployed using Google Cloud Run, enabling easy scalability and online accessibility. Follow these steps for deployment:
 
