@@ -8,49 +8,59 @@ MoodMate is a chatbot designed as a personal learning project to explore and pra
 ## Features
 MoodMate demonstrates the integration of modern tools and frameworks to create a functional chatbot application:
 
-<div style="text-align: center;">
-   <img src="images/langchain.jpeg" alt="Langchain Logo" width="300"> 
-</div>
-
+<img src="images/langchain.jpeg" alt="Langchain Logo" width="150"> 
 ### LangChain Integration:
 - Implements `ConversationSummaryMemory` to provide context-aware interactions.
 - Utilizes `ConversationChain` and Google’s LLM (ChatGoogleGenerativeAI) to power the chatbot's conversational logic.
 
-<div style="text-align: center;">
-   <img src="images/fastapi.jpeg" alt="FastAPI Logo" width="300"> 
-</div>
-   
+<img src="images/fastapi.jpeg" alt="FastAPI Logo" width="150">    
 ### FastAPI Backend:
 - Designed an API endpoint (`/chat`) to handle user inputs and return chatbot responses.
-</div>
 
-<div style="text-align: center;">
-   <img src="images/streamlit.jpeg" alt="Streamlit Logo" width="300"> 
-</div>
-
+<img src="images/streamlit.jpeg" alt="Streamlit Logo" width="150"> 
 ### Streamlit Frontend:
 - Developed an interactive web interface to send user queries to the API and display responses.
 
-<div style="text-align: center;">
-   <img src="images/Docker.png" alt="Docker Logo" width="300"> 
-</div>
-
+<img src="images/Docker.png" alt="Docker Logo" width="150"> 
 ### Docker for Containerization:
 - Containerized the entire system, ensuring portability and ease of deployment.
 
-<div style="text-align: center;">
-   <img src="images/gcr.jpeg" alt="GCR Logo" width="300"> 
-</div>
-
+<img src="images/gcr.jpeg" alt="GCR Logo" width="150"> 
 ### Google Cloud Run Deployment:
 - Deployed the application online, making it accessible from anywhere.
 
 ## Table of Contents
-1. [Installation](#installation)
-2. [Deployment](#deployment)
-3. [Project Structure](#project-structure)
+1. [Project Structure](#project-structure)
+2. [Installation](#installation)
+3. [Deployment](#deployment)
 4. [License](#license)
 5. [Contact](#contact)
+
+## Project Structure
+The `moodmate/` project directory is organized as follows:
+
+```plaintext
+moodmate/
+├── api/                      # Backend code for the chatbot API
+│   ├── .env                  # Include your GOOGLE_API_KEY
+│   ├── api.py                # API server entry point, handles requests and responses
+│   ├── chatbot.py            # Core chatbot logic, including conversation management
+│   ├── requirements.txt      # Dependencies required for the backend
+│   └── Dockerfile            # Dockerfile for containerizing the backend
+│
+├── app/                      # Frontend application code
+│   ├── app.py                # Streamlit app entry point, provides user interface
+│   ├── requirements.txt      # Dependencies required for the frontend
+│   └── Dockerfile            # Dockerfile for containerizing the frontend
+│
+├── images/                   # Project assets like screenshots
+│   └── moodmate.png          # Screenshot of the MoodMate interface
+│
+├── .dockerignore             # Specifies files to exclude from Docker builds
+├── .gitignore                # Specifies files to exclude from Git commits
+├── docker-compose.yml        # Configuration for Docker Compose to run the project
+└── README.md                 # Project documentation
+```
 
 ## Installation
 To run MoodMate locally, follow these steps:
@@ -202,32 +212,6 @@ gcloud run deploy moodmate-app \
     --region REGION \
     --allow-unauthenticated \
     --set-env-vars API_URL=https://moodmate-api-YOUR_PROJECT_ID.REGION.run.app/
-```
-
-## Project Structure
-The `moodmate/` project directory is organized as follows:
-
-```plaintext
-moodmate/
-├── api/                      # Backend code for the chatbot API
-│   ├── .env                  # Include your GOOGLE_API_KEY
-│   ├── api.py                # API server entry point, handles requests and responses
-│   ├── chatbot.py            # Core chatbot logic, including conversation management
-│   ├── requirements.txt      # Dependencies required for the backend
-│   └── Dockerfile            # Dockerfile for containerizing the backend
-│
-├── app/                      # Frontend application code
-│   ├── app.py                # Streamlit app entry point, provides user interface
-│   ├── requirements.txt      # Dependencies required for the frontend
-│   └── Dockerfile            # Dockerfile for containerizing the frontend
-│
-├── images/                   # Project assets like screenshots
-│   └── moodmate.png          # Screenshot of the MoodMate interface
-│
-├── .dockerignore             # Specifies files to exclude from Docker builds
-├── .gitignore                # Specifies files to exclude from Git commits
-├── docker-compose.yml        # Configuration for Docker Compose to run the project
-└── README.md                 # Project documentation
 ```
 
 ## License
