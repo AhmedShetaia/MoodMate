@@ -23,7 +23,7 @@ MoodMate demonstrates the integration of modern tools and frameworks to create a
 
 ### Google Cloud Run Deployment:
 - Deployed the application online, making it accessible from anywhere.
----
+
 ## Table of Contents
 1. [Installation](#installation)
 2. [Deployment](#deployment)
@@ -82,7 +82,7 @@ docker-compose up --build
 
 ### Access the application:
 Open the Streamlit server using the link provided in the terminal output.
----
+
 ## Deployment
 MoodMate is deployed using Google Cloud Run, enabling easy scalability and online accessibility. Follow these steps for deployment:
 
@@ -111,31 +111,26 @@ MoodMate is deployed using Google Cloud Run, enabling easy scalability and onlin
 
 To authenticate Docker with Google Cloud, follow these steps:
 
-##### Step 1: Generate the Access Token
+##### 1: Generate the Access Token
 Run the following command to generate and print your access token:
 ```bash
 gcloud auth print-access-token
 ```
 Copy the token from the output.
 
-##### Step 2: Log in to Docker with the Token
+##### 2: Log in to Docker with the Token
 Run the docker login command and paste the token when prompted for a password:
 
 For Artifact Registry:
 ```bash
 docker login -u oauth2accesstoken https://<region>-docker.pkg.dev
 ```
-Replace `<region>` with your registry's region (e.g., us, europe, or asia).
-
-Example:
-```bash
-docker login -u oauth2accesstoken https://us-docker.pkg.dev
-```
+Replace `<region>` with your registry's region (e.g., us, me-central1, or asia).
 
 ##### Step 3: Paste the Token
 When prompted for a password after running the docker login command, paste the token you copied in Step 1.
 
-Example Output:
+Output should look like this :
 ```bash
 $ docker login -u oauth2accesstoken https://gcr.io
 Password: 
