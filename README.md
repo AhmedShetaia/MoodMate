@@ -187,6 +187,7 @@ The `moodmate/` project directory is organized as follows:
 ```plaintext
 moodmate/
 ├── api/                      # Backend code for the chatbot API
+│   ├── .env                  # Include your GOOGLE_API_KEY
 │   ├── api.py                # API server entry point, handles requests and responses
 │   ├── chatbot.py            # Core chatbot logic, including conversation management
 │   ├── requirements.txt      # Dependencies required for the backend
@@ -200,7 +201,6 @@ moodmate/
 ├── images/                   # Project assets like screenshots
 │   └── moodmate.png          # Screenshot of the MoodMate interface
 │
-├── .env                      # Include your GOOGLE_API_KEY
 ├── .dockerignore             # Specifies files to exclude from Docker builds
 ├── .gitignore                # Specifies files to exclude from Git commits
 ├── docker-compose.yml        # Configuration for Docker Compose to run the project
