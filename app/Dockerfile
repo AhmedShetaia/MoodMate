@@ -16,5 +16,10 @@ COPY ./app .
 # Expose the port that Streamlit will run on (default is 8501)
 EXPOSE 8501
 
+# Set environment variables for Streamlit
+ENV STREAMLIT_SERVER_HEADLESS=true
+ENV STREAMLIT_SERVER_PORT=8080
+ENV STREAMLIT_SERVER_ENABLECORS=false
+
 # Start Streamlit
 CMD ["streamlit", "run", "app.py"]
