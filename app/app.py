@@ -8,8 +8,6 @@ load_dotenv()
 url = os.getenv("API_URL","http://0.0.0.0:8080")
 # Define the FastAPI endpoint URL
 FASTAPI_URL = f"{url}/chat" # read the url from env variables 
-                                 #"http://moodmate_api:8000/chat" # moodmate_api is the name of the network used in yaml file 
-                                 #"http://127.0.0.1:8000/chat"  use this url if you are testing the app with the api locally 
 
 # Streamlit UI for the chatbot
 st.title("MoodMate")
