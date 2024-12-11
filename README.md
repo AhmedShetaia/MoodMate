@@ -9,23 +9,28 @@ MoodMate is a chatbot designed as a personal learning project to explore and pra
 MoodMate demonstrates the integration of modern tools and frameworks to create a functional chatbot application:
 
 <img src="images/langchain.jpeg" alt="Langchain Logo" width="150"> 
+
 ### LangChain Integration:
 - Implements `ConversationSummaryMemory` to provide context-aware interactions.
 - Utilizes `ConversationChain` and Google’s LLM (ChatGoogleGenerativeAI) to power the chatbot's conversational logic.
 
-<img src="images/fastapi.jpeg" alt="FastAPI Logo" width="150">    
+<img src="images/fastapi.jpeg" alt="FastAPI Logo" width="150"> 
+
 ### FastAPI Backend:
 - Designed an API endpoint (`/chat`) to handle user inputs and return chatbot responses.
 
 <img src="images/streamlit.jpeg" alt="Streamlit Logo" width="150"> 
+
 ### Streamlit Frontend:
 - Developed an interactive web interface to send user queries to the API and display responses.
 
 <img src="images/Docker.png" alt="Docker Logo" width="150"> 
+
 ### Docker for Containerization:
 - Containerized the entire system, ensuring portability and ease of deployment.
 
 <img src="images/gcr.jpeg" alt="GCR Logo" width="150"> 
+
 ### Google Cloud Run Deployment:
 - Deployed the application online, making it accessible from anywhere.
 
