@@ -1,5 +1,7 @@
 # MoodMate
 
+![MoodMate](images/moodmate.jpg)
+
 ## Description
 MoodMate is a chatbot designed as a personal learning project to explore and practice skills in modern technologies like LangChain, FastAPI, and Streamlit. While it provides empathetic responses and basic emotional support, its primary goal is to demonstrate the integration of these tools in a functional, interactive application.
 
@@ -99,6 +101,46 @@ MoodMate is deployed using Google Cloud Run, enabling easy scalability and onlin
    - **Location**: Choose a region close to your user base.
    - **Format**: Docker.
 3. Authenticate Docker with Google Cloud:
+
+To authenticate Docker with Google Cloud, follow these steps:
+
+##### Step 1: Generate the Access Token
+Run the following command to generate and print your access token:
+```bash
+gcloud auth print-access-token
+```
+Copy the token from the output.
+
+##### Step 2: Log in to Docker with the Token
+Run the docker login command and paste the token when prompted for a password:
+
+For Artifact Registry:
+```bash
+docker login -u oauth2accesstoken https://<region>-docker.pkg.dev
+```
+Replace `<region>` with your registry's region (e.g., us, europe, or asia).
+
+Example:
+```bash
+docker login -u oauth2accesstoken https://us-docker.pkg.dev
+```
+
+For Container Registry:
+```bash
+docker login -u oauth2accesstoken https://gcr.io
+```
+Replace `gcr.io` with your specific registry domain if necessary (e.g., us.gcr.io, eu.gcr.io).
+
+##### Step 3: Paste the Token
+When prompted for a password after running the docker login command, paste the token you copied in Step 1.
+
+Example Output:
+```bash
+$ docker login -u oauth2accesstoken https://gcr.io
+Password: 
+Login Succeeded
+```
+Now, you are authenticated with Docker using the manually copied token.
 ```bash
 gcloud auth configure-docker
 ```
@@ -177,4 +219,4 @@ moodmate/
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Contact
-Feel free to connect with me on LinkedIn. I’d love to hear your feedback, discuss the project, or collaborate on future ideas!
+Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/ahmed-shetaia/). I’d love to hear your feedback, discuss the project, or collaborate on future ideas!
