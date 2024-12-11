@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY ./app .
 
 # Expose the port that Streamlit will run on (default is 8501)
-EXPOSE 8501
+EXPOSE 8080
 
 # Set environment variables for Streamlit
 ENV STREAMLIT_SERVER_HEADLESS=true
