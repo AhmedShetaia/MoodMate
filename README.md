@@ -26,11 +26,10 @@ MoodMate demonstrates the integration of modern tools and frameworks to create a
 ---
 ## Table of Contents
 1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Deployment](#deployment)
-4. [Project Structure](#project-structure)
-5. [License](#license)
-6. [Contact](#contact)
+2. [Deployment](#deployment)
+3. [Project Structure](#project-structure)
+4. [License](#license)
+5. [Contact](#contact)
 
 ## Installation
 To run MoodMate locally, follow these steps:
